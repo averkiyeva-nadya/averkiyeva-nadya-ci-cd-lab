@@ -27,6 +27,9 @@ jobs:
         with:
           path: site
 
+      - name: Wait for artifact
+        run: sleep 15
+
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
