@@ -20,7 +20,7 @@ jobs:
         run: |
           docker build -t lab .
           docker run -d -p 8080:80 lab
-          curl -fsS --retry 5 --retry-connrefused http://127.0.0.1:8080/ -o page.html
+          curl -fsS --retry 5 --retry-all-errors http://127.0.0.1:8080/ -o page.html
           grep -F 'GitHub: averkiyeva-nadya' page.html
           echo OK
 
